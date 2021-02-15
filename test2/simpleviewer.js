@@ -106,12 +106,12 @@ loadingTask.promise.then(function (pdfDocument) {
       }
     };
 
-    function nb(){
-      let s = document.createElement('script'); s.src= 'https://nb2.csail.mit.edu/client/js/bundle.js'; document.body.append(s);
-      eventBus.off('updateviewarea', nb);
-    }
-
-    eventBus.on('updateviewarea', nb);
+    eventBus.on('pagerender', (evt) => {
+      // If we've rendered the last page, load NB
+      if (evt.pageNumber === views.length) {
+        let s = document.createElement('script'); s.src= 'https://nb2.csail.mit.edu/client/js/bundle.js'; document.body.append(s);
+      }
+    });
 
     pdfViewer.update();
   })
