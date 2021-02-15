@@ -30,6 +30,13 @@ limitations under the License.
     #viewerContainer {
       width: calc(100vw - 390px);
     }
+    #loadingNB {
+      position: absolute;
+      top: 50%;
+      left: calc(100vw - 370px);
+      font-size: x-large;
+      font-weight: bold;
+    }
   </style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.7.570/pdf.min.js"></script>
@@ -42,6 +49,8 @@ limitations under the License.
   <div id="viewerContainer">
     <div id="viewer" class="pdfViewer"></div>
   </div>
+
+  <div id="loadingNB">Loading nb... <br> (feel free to start reading!)</div>
 
   <script src="simpleviewer.js"></script>
 </body>

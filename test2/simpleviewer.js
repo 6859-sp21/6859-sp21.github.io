@@ -29,8 +29,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = '//cdnjs.cloudflare.com/ajax/libs/pdf.j
 var CMAP_URL = "../../node_modules/pdfjs-dist/cmaps/";
 var CMAP_PACKED = true;
 
-var DEFAULT_URL = "../TheValueOfVisualization.pdf";
-var SEARCH_FOR = ""; // try 'Mozilla';
+let params = (new URL(document.location)).searchParams;
+var DEFAULT_URL = params.get('file') ?? "../TheValueOfVisualization.pdf";
+var SEARCH_FOR = "Value"; // try 'Mozilla';
 
 var container = document.getElementById("viewerContainer");
 
